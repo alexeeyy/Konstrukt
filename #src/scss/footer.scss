@@ -1,0 +1,190 @@
+.footer {
+  color: $additionalColor;
+		// .footer__content
+		&__content {
+      padding: 40px 0 50px;
+      background-color: #141A20;
+		}
+		// .footer__container
+		&__container {
+      display: flex;
+      justify-content: space-between;
+		}
+		// .footer__col
+		&__col {
+      display: flex;
+      flex-direction: column;
+			// .footer__col_company
+			&_company {
+        flex: 0 0 250 / 940 * 100%;
+			}
+			// .footer__col_links
+			&_links {
+        flex: 0 0 262 / 940 * 100%;
+			}
+			// .footer__col_contacts
+			&_contacts {
+        flex: 0 0 141 / 940 * 100%;
+			}
+			// .footer__col_socials
+			&_socials {
+        flex: 0 0 87 / 940 * 100%;
+			}
+		}
+		// .footer__logo
+		&__logo {
+      margin: 0px 0px 15px 0px;
+      width: 102px;
+      height: 23px;
+		}
+		// .footer__text
+		&__text {
+      line-height: 19px;
+      letter-spacing: 0.85px;
+		}
+		// .footer__cr
+		&__cr {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60px;
+      background-color: #171819;
+      line-height: 15px;
+      letter-spacing: 0.846154px;
+		}
+}
+.company-footer {
+		// .company-footer__title
+		&__title {
+      margin: 0px 0px 20px 0px;
+      line-height: 15px;
+      letter-spacing: 0.846154px;
+      text-transform: uppercase;
+		}
+}
+
+.links-footer {
+		// .company-footer__title
+		&__title {
+      margin: 0px 0px 10px 0px;
+      line-height: 15px;
+      letter-spacing: 0.846154px;
+      text-transform: uppercase;
+		}
+		// .links-footer__row
+		&__row {
+      display: flex;
+      justify-content: space-between;
+		}
+		// .links-footer__list
+		&__list {
+		}
+		// .links-footer__item
+		&__item {
+      width: fit-content;
+      @media (any-hover: hover) {
+        &:hover {
+          .links-footer__link {
+            color: $actionColor;
+          }
+        }
+      }
+      
+		}
+		// .links-footer__link
+		&__link {
+      font-weight: 600;
+      line-height: 25px;
+      letter-spacing: 0.846154px;
+      color: inherit;
+      text-transform: uppercase;
+      transition: color 0.3s ease 0s;
+		}
+}
+
+.contacts-footer {
+  line-height: 16px;
+  letter-spacing: 0.846154px;
+		// .company-footer__title
+		&__title {
+      margin: 0px 0px 15px 0px;
+      line-height: 15px;
+      letter-spacing: 0.846154px;
+      text-transform: uppercase;
+		}
+		// .contacts-footer__address
+		&__address {
+      margin: 0px 0px 15px 0px;
+      color: inherit;
+      transition: color 0.3s ease 0s;
+      @media (any-hover: hover) {
+        &:hover {
+          color: $actionColor;
+        }
+      }
+		}
+		// .contacts-footer__tel
+		&__tel {
+      margin: 0px 0px 15px 0px;
+      color: inherit;
+      transition: color 0.3s ease 0s;
+      @media (any-hover: hover) {
+        &:hover {
+          color: $actionColor;
+        }
+      }
+		}
+		// .contacts-footer__mail
+		&__mail {
+      color: inherit;
+      transition: color 0.3s ease 0s;
+      @media (any-hover: hover) {
+        &:hover {
+          color: $actionColor;
+        }
+      }
+		}
+}
+
+.socials-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-shrink: 0;
+		// .socials-footer__fb
+		&__fb {
+      width: 15px;
+      height: 15px;
+      fill: $additionalColor;
+      transition: fill 0.3s ease 0s;
+      @media (any-hover: hover) {
+        &:hover {
+          fill: $actionColor;
+        }
+      }
+		}
+		// .socials-footer__tw
+		&__tw {
+      width: 15px;
+      height: 15px;
+      fill: $additionalColor;
+      transition: fill 0.3s ease 0s;
+      @media (any-hover: hover) {
+        &:hover {
+          fill: $actionColor;
+        }
+      }
+		}
+		// .socials-footer__google
+		&__google {
+      width: 15px;
+      height: 15px;
+      fill: $additionalColor;
+      transition: fill 0.3s ease 0s;
+      @media (any-hover: hover) {
+        &:hover {
+          fill: $actionColor;
+        }
+      }
+		}
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('_head.html',{
+	"title":"Главная"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('_header.html',{})
+			<main class="page">
+        <section class="page__story story">
+          <h2 class="story__title">Our Story</h2>
+          <div class="story__container _container">
+            <div class="story__row">
+              <div class="story__col story__col_l">
+                <p class="story__col-title">Founded in 2011 by John Mathew Smith, <span>Konstruct</span> has become the number one construction management firm</p>
+                <p class="story__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+              </div>
+              <div class="story__col story__col_r">
+                <figure class="story__figure _ibg">
+                  <img src="img/story/01.jpg" alt="">
+                  <span class="story__figcaption">We Plan</span>
+                </figure>
+                <figure class="story__figure _ibg">
+                  <img src="img/story/02.jpg" alt="">
+                  <span class="story__figcaption">We Manage</span>
+                </figure>
+                <figure class="story__figure _ibg">
+                  <img src="img/story/03.jpg" alt="">
+                  <span class="story__figcaption">We Build</span>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="page__capabilities capabilities">
+          <div class="capabilities__container _container">
+            <div class="capabilities__row">
+              <h2 class="capabilities__title">Our Capabilities</h2>
+              <p class="capabilities__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+              <a href="" class="capabilities__btn btn">All Services</a>
+            </div>
+            <div class="capabilities__grid">
+              <div class="capabilities__grid-item">
+                <span class="capabilities__icon capabilities__icon_1"></span>
+                <h3 class="capabilities__grid-item-title">Project and Construction Managment</h3>
+                <p class="capabilities__grid-item-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+              </div>
+              <div class="capabilities__grid-item">
+                <span class="capabilities__icon capabilities__icon_2"></span>
+                <h3 class="capabilities__grid-item-title">Structure Audit and Maintenance</h3>
+                <p class="capabilities__grid-item-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+              </div>
+              <div class="capabilities__grid-item">
+                <span class="capabilities__icon capabilities__icon_3"></span>
+                <h3 class="capabilities__grid-item-title">Factory Construction and Modeling</h3>
+                <p class="capabilities__grid-item-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="page__git git">
+          <div class="git__content content-git">
+            <div class="content-git__container _container">
+              <span class="content-git__title">Want to build <br> something amazing?</span>
+              <a href="" class="content-git__btn btn">get in touch</a>
+            </div>
+          </div>
+          <div class="git__signup signup-git">
+            <div class="signup-git__container _container">
+              <span class="signup-git__signup-title">Newsletter Signup</span>
+              <form action="#" class="form signup-form">
+                <input autocomplete="off" type="text" name="name" data-error="" data-value="test@youremail.com" class="signup-form__input form__input input _req _email">
+                <button type="submit" class="signup-form__btn form__btn btn">signup</button>
+              </form>
+            </div>
+          </div>
+        </section>
+			</main>
+			@@include('_footer.html',{})
+		</div>
+		@@include('_js.html',{})
+	</body>
+</html>

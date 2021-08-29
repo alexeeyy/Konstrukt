@@ -1,0 +1,399 @@
+@use "sass:math";
+//<МИКСИНЫ>===============================================================================================
+@import "mixins";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+//&display=swap&subset=cyrillic-ext
+@import "fonts";
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+//@import "icons";
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontFamily: "OpenSans";
+$fontSize: 11;
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>==========================================================================================================
+$minWidth: 320px;
+$maxWidth: 1440;
+$maxWidthContainer: 970;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+$mainColor: #48555B;
+$additionalColor: #FFFFFF;
+$actionColor: #00A4E5;
+
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null";
+body {
+	color: $mainColor;
+	&._lock {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	&._loaded {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+._container {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+  padding: 0 15px;
+	@media (max-width: $md3+px) {
+		padding: 0 8px;
+	}
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms";
+@import "ui";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "datepicker";
+//@import "lightgallery";
+//@import "pagging";
+// @import "popup";
+@import "header";
+@import "footer";
+// @import "home";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.page {
+  flex: 1 1 auto;
+    // .page__story
+    &__story {
+    }
+		// .page__capabilities
+		&__capabilities {
+		}
+		// .page__git
+		&__git {
+		}
+}
+//===================================================================================================================================
+.story {
+  padding: 60px 0;
+		// .story__title
+		&__title {
+      position: relative;
+      margin: 0px 0px 50px 0px;
+      padding: 0px 0px 10px 0px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      text-align: center;
+      letter-spacing: 2.30625px;
+      text-transform: uppercase;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: calc(50% - 25px);
+        background-color: #00A4E5;
+        width: 50px;
+        height: 2px;
+      }
+		}
+		// .story__container
+		&__container {
+		}
+		// .story__row
+		&__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+		}
+		// .story__col
+		&__col {
+			// .story__col_l
+			&_l {
+        flex: 0 0 405 / 940 * 100%;
+			}
+			// .story__col_r
+			&_r {
+        display: flex;
+        justify-content: space-between;
+        flex: 0 0 460 / 940 * 100%;
+        max-height: 224px;
+			}
+		}
+		// .story__col-title
+		&__col-title {
+      margin: 0px 0px 30px 0px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 27px;
+      letter-spacing: 0.1875px;
+      span {
+        color: $actionColor;
+      }
+		}
+		// .story__text
+		&__text {
+      font-size: 13px;
+      line-height: 23px;
+      letter-spacing: 0.1875px;
+		}
+		// .story__figure
+		&__figure {
+      flex: 0 0 140 / 460 * 100%;
+      padding: 15px 15px 150px 15px;
+      & img {
+        z-index: -1;
+      }
+		}
+		// .story__figcaption
+		&__figcaption {
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 29px;
+      letter-spacing: 0.1875px;
+      color: $additionalColor;
+      text-transform: uppercase;
+		}
+}
+//=====================================================================================
+.capabilities {
+		// .capabilities__container
+		&__container {
+		}
+		// .capabilities__row
+		&__row {
+      display: flex;
+      margin: 0px 0px 75px 0px;
+		}
+		// .capabilities__title
+		&__title {
+      margin: 0px 155px 0px 0px;
+      padding: 0px 0px 10px 0px;
+      position: relative;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 25px;
+      letter-spacing: 2.30625px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: $actionColor;
+        width: 50px;
+        height: 2px;
+      }
+		}
+		// .capabilities__text
+		&__text {
+      flex: 0 0 405 / 940 * 100%;
+      margin: 0px auto 0px 0px;
+      line-height: 19px;
+      letter-spacing: 0.2px;
+		}
+		// .capabilities__btn
+		&__btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      white-space: nowrap;
+      height: 40px;
+      padding: 0 29px;
+      background-color: $actionColor;
+      color: $additionalColor;
+      border: 1px solid transparent;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 18px;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease 0s;
+      @media (any-hover: hover) {
+        &:hover {
+          color: $actionColor;
+          background-color: $additionalColor;
+          border-color: $actionColor;
+        }
+      }
+      
+      &:active {
+        transform: scale(0.9);
+      }
+		}
+		// .capabilities__grid
+		&__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin: 0px 0px 115px 0px;
+		}
+		// .capabilities__grid-item
+		&__grid-item {
+      display: flex;
+      flex-direction: column;
+      padding: 38px 20px 39px 23px;
+      border: 1px solid #E6E6E6;
+		}
+		// .capabilities__icon
+		&__icon {
+      margin: 0px 0px 25px 0px;
+      height: 75px;
+			// .capabilities__icon_1
+			&_1 {
+        width: 65.6;
+        background: url(../img/capabilities/01.svg) no-repeat;
+			}
+			// .capabilities__icon_2
+			&_2 {
+        width: 67.7;
+        background: url(../img/capabilities/02.svg) no-repeat;
+			}
+			// .capabilities__icon_3
+			&_3 {
+        width: 70.6;
+        background: url(../img/capabilities/03.svg) no-repeat;
+			}
+		}
+		// .capabilities__grid-item-title
+		&__grid-item-title {
+      margin: 0px 0px 13px 0px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.426667px;
+      text-transform: uppercase;
+		}
+		// .capabilities__grid-item-text
+		&__grid-item-text {
+      font-size: 13px;
+      line-height: 23px;
+      letter-spacing: 0.1875px;
+		}
+}
+//=====================================================================================
+.content-git {
+  padding: 120px 0 230px;
+  background: url(../img/git-bg.jpg) no-repeat center bottom -2px / cover;
+		// .content-git__container
+		&__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+		}
+		// .content-git__title
+		&__title {
+      margin: 0px 0px 35px 0px;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 36px;
+      letter-spacing: 0.15px;
+      text-align: center;
+		}
+		// .content-git__btn
+		&__btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      padding: 0 26px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 18px;
+      letter-spacing: 0.5px;
+      color: $additionalColor;
+      background-color: $actionColor;
+      border: 1px solid transparent;
+      transition: all 0.3s ease 0s;
+      @media (any-hover: hover) {
+        &:hover {
+          border-color: $actionColor;
+          background-color: transparent;
+          color: $actionColor;
+        }
+      }
+      &:active{
+        transform: scale(.9);
+      }
+		}
+}
+
+.signup-git {
+  padding: 30px 0;
+  background-color: #171819;
+		// .signup-git__container
+		&__container {
+      display: flex;
+      align-items: center;
+      column-gap: 70px;
+      max-width: 685px;
+		}
+		// .signup-git__signup-title
+		&__signup-title {
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 30px;
+      letter-spacing: 0.846154px;
+		}
+}
+
+.signup-form {
+  display: flex;
+  height: 40px;
+		// .signup-form__input
+		&__input {
+      padding: 10px 15px;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.07px;
+      color: inherit;
+      border: 1px solid #979797;
+		}
+		// .signup-form__btn
+		&__btn {
+      padding: 0 50px;
+      color: $additionalColor;
+      background-color: $actionColor;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 18px;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease 0s;
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: #00b7ff;
+        }
+      }
+      &:active{
+        transform: scale(.9);
+      }
+		}
+}
+//</ОСНОВНОЙ БЛОК>====================================================================================================
